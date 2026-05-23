@@ -1,0 +1,251 @@
+/* Apply glassmorphism background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Darker blue gradient */
+    color: white;
+    padding-top: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgba(30, 60, 114, 0.3); /* Dark blue transparent */
+    position: fixed;
+    padding-top: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main container */
+.main-container {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+}
+
+/* Profile Container */
+.profile-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.profile-container:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.profile-dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile dropdown text */
+.profile-dropdown p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: white;
+}
+
+/* Logout button */
+.profile-dropdown a {
+    display: block;
+    background: #ff4d4d;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.profile-dropdown a:hover {
+    background: #cc0000;
+}
+
+/* Cards Section */
+.dashboard {
+    margin-top: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: flex-start; /* Aligns the cards to the left */
+    align-items: center;
+    gap: 8px; /* Reduces space between cards */
+    margin-left: -15px; /* Moves the cards a bit to the left */
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    min-width: 180px;
+    margin: 5px;
+    transition: 0.3s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Table */
+.employee-table {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.employee-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table th, .employee-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.employee-table th {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-container {
+        margin-left: 210px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.set-salary-container {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.set-salary-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.set-salary-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.set-salary-container label {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.set-salary-container input,
+.set-salary-container select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.set-salary-container button {
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.set-salary-container button:hover {
+    background: #218838;
+}
+
+.success-message, .error-message {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+}
